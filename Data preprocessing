@@ -1,0 +1,17 @@
+#import python libraries
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+
+PATH = 'C:/Users/Harsh/Desktop/Input/' #set path where data set files are stored
+
+train_data = pd.read_csv(PATH + 'train.csv')
+test_data = pd.read_csv(PATH + 'test.csv')
+gender_submission = pd.read_csv(PATH + 'gender_submission.csv')
+
+train_data.head() #display training data in rows and columns form
+test_data.head() #display test data in rows and columns form
+train_data.describe()  # give mean, std, IQR values
