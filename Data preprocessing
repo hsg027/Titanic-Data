@@ -15,3 +15,4 @@ gender_submission = pd.read_csv(PATH + 'gender_submission.csv')
 train_data.head() #display training data in rows and columns form
 test_data.head() #display test data in rows and columns form
 train_data.describe()  # give mean, std, IQR values
+train_data.dtypes() # to find data types
