@@ -17,3 +17,25 @@ combined_data.to_csv( "combined_data.csv", index=False )
 combined_data.head() #print top 5
 combined_data.describe() #count, mean, std, min, 25%, 50%, 75%, max
 print(combined_data) #print the joined data
+
+#categorical data analysis
+
+responses=pd.Categorical(combined_data.Pclass, ordered=True)
+df_responses = pd.DataFrame({"response": responses})
+df_responses.describe()
+
+responses=pd.Categorical(combined_data.Sex, ordered=True)
+df_responses = pd.DataFrame({"response": responses})
+df_responses.describe()
+
+responses=pd.Categorical(combined_data.SibSp, ordered=True)
+df_responses = pd.DataFrame({"response": responses})
+df_responses.describe()
+
+responses=pd.Categorical(combined_data.Embarked, ordered=True)
+df_responses = pd.DataFrame({"response": responses})
+df_responses.describe()
+
+responses=pd.Categorical(combined_data.Cabin, ordered=True)
+df_responses = pd.DataFrame({"response": responses})
+df_responses.describe()
