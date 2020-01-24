@@ -39,3 +39,7 @@ df_responses.describe()
 responses=pd.Categorical(combined_data.Cabin, ordered=True)
 df_responses = pd.DataFrame({"response": responses})
 df_responses.describe()
+
+responses=pd.Categorical(combined_data.Parch, ordered=True)
+df_responses = pd.DataFrame({"response": responses})
+df_responses.describe()
