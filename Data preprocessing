@@ -10,41 +10,10 @@ PATH = 'C:/Users/Harsh/Desktop/Input/' #set path where data set files are stored
 
 train_data = pd.read_csv(PATH + 'train.csv')
 test_data = pd.read_csv(PATH + 'test.csv')
-gender_submission = pd.read_csv(PATH + 'gender_submission.csv')
 
-train_data.head() #display training data in rows and columns form
-test_data.head() #display test data in rows and columns form
-train_data.describe()  # give mean, std, IQR values
-train_data.dtypes() # to find data types
+combined_data=pd.concat([test_data, train_data]) # to add both train and test data
+combined_data.to_csv( "combined_data.csv", index=False )
 
-#categorical data analysis
-
-survived= [0,1,1,1,0]
-survey_survived=pd.Categorical(survived, categories=[0,1], ordered=True)
-df_survey_survived = pd.DataFrame({"response": survey_survived})
-df_survey_survived.describe()
-
-pclass= [3,1,3,1,3]
-survey_pclass=pd.Categorical(pclass, categories=[3,1], ordered=True)
-df_survey_pclass = pd.DataFrame({"response": survey_pclass})
-df_survey_pclass.describe()
-
-sex= ["male","female", "female", "female", "male"]
-survey_sex=pd.Categorical(sex, categories=["male", "female"], ordered=True)
-df_survey_sex = pd.DataFrame({"response": survey_sex})
-df_survey_sex.describe()
-
-SibSp= [1,1,0,1,0]
-survey_sibsp=pd.Categorical(SibSp, categories=[0,1], ordered=True)
-df_survey_SibSp = pd.DataFrame({"response": survey_sibsp})
-df_survey_SibSp.describe()
-
-Parch= [0,0,0,0,0]
-survey_Parch=pd.Categorical(Parch, categories=[0], ordered=True)
-df_survey_Parch = pd.DataFrame({"response": survey_Parch})
-df_survey_Parch.describe()
-
-Embarked= ["S", "C", "S", "S", "S"]
-survey_Embarked=pd.Categorical(Embarked, categories=["S", "C"], ordered=True)
-df_survey_Embarked = pd.DataFrame({"response": survey_Embarked})
-df_survey_Embarked.describe()
+combined_data.head() #print top 5
+combined_data.describe() #count, mean, std, min, 25%, 50%, 75%, max
+print(combined_data) #print the joined data
