@@ -18,6 +18,8 @@ combined_data.head() #print top 5
 combined_data.describe() #count, mean, std, min, 25%, 50%, 75%, max
 print(combined_data) #print the joined data
 
+combined_data.isnull().sum() #find number of missing values
+
 #categorical data analysis
 
 responses=pd.Categorical(combined_data.Pclass, ordered=True)
