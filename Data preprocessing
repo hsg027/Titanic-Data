@@ -53,7 +53,3 @@ df_responses.describe()
 responses=pd.Categorical(combined_data.PassengerId, ordered=True)
 df_responses = pd.DataFrame({"response": responses})
 df_responses.describe()
-
-responses=pd.Categorical(combined_data.Name, ordered=True)
-df_responses = pd.DataFrame({"response": responses})
-df_responses.describe()
