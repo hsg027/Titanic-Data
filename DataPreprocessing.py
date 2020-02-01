@@ -103,6 +103,17 @@ df_responses = pd.DataFrame({"response": responses})
 print("Passenger ID data analysis: ")
 print(df_responses.astype(str).describe())
 
+#9
+plt = train_data.Pclass.value_counts().sort_index().plot('bar', title='')
+plt.set_xlabel('Pclass')
+plt.set_ylabel('Survival Probability')
+
+#10
+
+plt = train_data[['Pclass', 'Survived']].groupby('Pclass').mean().Survived.plot('bar')
+plt.set_xlabel('Pclass')
+plt.set_ylabel('Survival Probability')
+
 #11
 
 histogram_1= sns.FacetGrid(train_data, col ='Survived', size=6)
